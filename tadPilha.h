@@ -17,7 +17,7 @@ typedef struct pilha Pilha;
 
 
 Pilha* inicializarPilha(Pilha* p);
-void push(Pilha* p, char* elemento);
+void push(Pilha* p, char* elemento, int no);
 char* pop(Pilha* p);
 int vazia(Pilha* p);
 

@@ -11,6 +11,7 @@
 #include "analisadorLexico.h"
 #include "tabelaSintatico.h"
 #include "tadPilha.h"
+#include "analisadorSintatico.h"
 
 
 int main (int argc, char *argv[]){
@@ -58,6 +59,10 @@ int main (int argc, char *argv[]){
 	carregaTABT(TABT,7,2,tabelaTerminais);
 	carregaTABNT(TABNT,2,3,tabelaNaoTerminais);
 	carregaAnaSin(ANASIN,TABGRAFO,10,6,TABT,7,2,TABNT,2,3);
+
+	FILE* codigo = fopen("codigo2","r");
+
+	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2);
 
 	fclose(tabelaGrafo);
 	fclose(tabelaNaoTerminais);
