@@ -28,7 +28,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 
 	//Inicializa as Pilhas
 	Pilha* cadeia = inicializarPilha(cadeia);
-	Pilha* terminais = inicializarPilha(terminais);
+	Pilha* naoTerminais = inicializarPilha(naoTerminais);
 
 	char* cadCaracteres = (char *)malloc(20*sizeof(char));
 	char* cadTerminais = (char *)malloc(20*sizeof(char));
@@ -60,50 +60,52 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 		}
 
 		while(1){
-			while(aux==-2 && !vazia(terminais)){
-				imprimirPilha(terminais);
-				aux = atoi(ANASIN[buscaNoTopo(terminais)][4])-1;
+			// para aux == -2 
+			while(aux==-2 && !vazia(naoTerminais)){
+				imprimirPilha(naoTerminais);
+				aux = atoi(ANASIN[buscaNoTopo(naoTerminais)][4])-1;
 				if(aux==-1) aux = -2;
 				if(aux!=-2 && strcmp(ANASIN[aux][1],caracter)!=0) aux = -2;
 				printf("Linha = %d\n",aux);
-				strcpy(p, pop(terminais));
+				strcpy(p, pop(naoTerminais));
 				printf("Desempilha o terminal %s\n",p);
 			}
-			if(vazia(terminais) && aux==-2){
+			if(vazia(naoTerminais) && aux==-2){
 				printf("Cadeia nao aceita\n");
 				return 0;
 			}
-			if(strcmp(ANASIN[aux][1],caracter)==0){ //Encontra na tabela ANASIN o caracter lido
-				printf("Caracter %c aceito! Proxima linha = %d\n",c,atoi(ANASIN[aux][4])-1);
-				strcpy(cadCaracteres,ANASIN[aux][1]);
-				push(cadeia,cadCaracteres,0); //Insere na pilha o caracter reconhecido
-				aux = atoi(ANASIN[aux][4])-1; //Aux recebe a linha correspondente ao sucessor do no encontrado
-				if(aux==-1)aux=-2;
-				break;
-			}else{
-				if(strcmp(ANASIN[aux][0],"N")==0){ //Encontra um Nao Terminal
-					strcpy(cadTerminais,ANASIN[aux][1]);
-					push(terminais,cadTerminais,atoi(ANASIN[aux][2])-1); //Empilha o nao terminal na pilha de nao terminais
-					printf("No que devemos voltar = %d\n",atoi(ANASIN[aux][2])-1);
-					printf("Nao terminal encontrado: %s! Devemos empilha-lo\n",cadTerminais);
-					aux = verificaLinhaTerminal(TABNT,linhasTabNT,cadTerminais); //Aux vai para a linha correspondente ao grafo do nao terminal
-					printf("Linha = %d\n",aux);
-				}else{
+
+			// Para um Terminal encontrado
+			if(strcmp(ANASIN[aux][0],"T")==0){
+
+				// para caracter lido reconhecido
+				if(strcmp(ANASIN[aux][1],caracter)==0){
+					printf("Caracter %c aceito! Proxima linha = %d\n",c,atoi(ANASIN[aux][4])-1);
+					strcpy(cadCaracteres,ANASIN[aux][1]);
+					push(cadeia,cadCaracteres,0); //Insere na pilha o caracter reconhecido
+					aux = atoi(ANASIN[aux][4])-1; //Aux recebe a linha correspondente ao sucessor do no encontrado
+					if(aux==-1)aux=-2;
+					break;
+				}
+				// para caracter não reconhecido
+				else {
 					aux = atoi(ANASIN[aux][3])-1; //Aux recebe a posicao do no alternativo
-					if(aux==-1){ //Caso nao haja mais nenhum no alternativo
-						//if(vazia(terminais)){ //Verifica se a pilha de terminais esta vazia
-							printf("Cadeia nao aceita\n");
-							return 0;
-						//}//else{ //Caso a pilha nao esteja
-						//	imprimirPilha(terminais);
-						//	aux = atoi(ANASIN[buscaNoTopo(terminais)][4])-1; //Aux recebe o sucessor do no que sera desempilhado
-						//	printf("Linha = %d\n",aux);
-						//	strcpy(p,pop(terminais)); //Desempilha o terminal
-					//		printf("Desempilha o terminal %s\n",p);
-						//}
+					
+					//Caso nao haja mais nenhum no alternativo
+					if(aux==-1){
+						printf("Cadeia nao aceita\n");
+						return 0;
 					}
 				}
-
+			}
+			// para um não terminal encontrado
+			else if(strcmp(ANASIN[aux][0],"N")==0){ //Encontra um Nao Terminal
+				strcpy(cadTerminais,ANASIN[aux][1]);
+				push(naoTerminais,cadTerminais,atoi(ANASIN[aux][2])-1); //Empilha o nao terminal na pilha de nao naoTerminais
+				printf("No que devemos voltar = %d\n",atoi(ANASIN[aux][2])-1);
+				printf("Nao terminal encontrado: %s! Devemos empilha-lo\n",cadTerminais);
+				aux = verificaLinhaTerminal(TABNT,linhasTabNT,cadTerminais); //Aux vai para a linha correspondente ao grafo do nao terminal
+				printf("Linha = %d\n",aux);
 			}
 		}
 		numeroLinha = aux;

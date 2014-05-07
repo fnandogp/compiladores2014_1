@@ -42,6 +42,8 @@ int main (int argc, char *argv[]){
 	carregaTABNT(TABNT,2,3,tabelaNaoTerminais);
 	carregaAnaSin(ANASIN,TABGRAFO,10,6,TABT,7,2,TABNT,2,3);
 
+	printf("\n");
+
 	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2);
 
 	fclose(tabelaGrafo);
