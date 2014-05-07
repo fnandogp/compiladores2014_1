@@ -1,4 +1,12 @@
 comp-trab2
 ========
 
-Segundo trabalho de compiladores
+Terceiro trabalho de compiladores
+
+Alguns exemplos de testes:
+
+   aabc
+   dfaec
+
+
+

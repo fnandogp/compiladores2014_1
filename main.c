@@ -16,34 +16,16 @@
 
 int main (int argc, char *argv[]){
 
-	/*
 	if(argc != 2) {
-		printf("Insira o nome do arquivo a ser analisado.\nPor exemplo: ./trab2 codigo\nOnde código é o nome do arquivo.");
+		printf("Insira o nome do arquivo a ser analisado.\n");
+		printf("Por exemplo: ./trab3 <codigo>\n");
+		printf("Onde código é o nome do arquivo.\n");
 	}
 	FILE* codigo = fopen(argv[1],"r");
 	if(!codigo) {
 		printf("\nArquivo não encontrado.\n\n");
 		return 0;
 	}
-
-	FILE* fp = fopen("automato","r");
-	FILE* tabSimbolos = fopen("simbolos","r");
-
-	Hash tab;
-	int result = iniciaTSR(tab,tabSimbolos);
-	// imprimeHash(tab);
-
-	int** matrix = inicializaMatrizAutomato(matrix,22,7);
-	carregaAutomato(matrix,22,7,fp);
-	executaAnalisador(codigo, matrix, 22, 7, tab);
-
-
-	fclose(fp);
-	fclose(codigo);
-	//fclose(tabSimbolos);
-	//liberaMatrizAutomato(matrix,22,7);
-	 *
-	 */
 
 	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,10,6);
 	char*** TABT = inicializaTABT(TABT, 7,2);
@@ -59,8 +41,6 @@ int main (int argc, char *argv[]){
 	carregaTABT(TABT,7,2,tabelaTerminais);
 	carregaTABNT(TABNT,2,3,tabelaNaoTerminais);
 	carregaAnaSin(ANASIN,TABGRAFO,10,6,TABT,7,2,TABNT,2,3);
-
-	FILE* codigo = fopen("codigo2","r");
 
 	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2);
 
