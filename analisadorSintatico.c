@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tadPilha.h"
+#include "hash.h"
 #include <string.h>
 
 
@@ -23,9 +24,9 @@ int verificaLinhaTerminal(char*** TABNT, int linhas, char* naoTerminal){
 }
 
 
-int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT){
+int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab){
 
-
+printf("1\n");
 	//Inicializa as Pilhas
 	Pilha* cadeia = inicializarPilha(cadeia);
 	Pilha* naoTerminais = inicializarPilha(naoTerminais);
@@ -34,21 +35,26 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	char* cadCaracteres = (char *)malloc(20*sizeof(char));
 	char* cadTerminais = (char *)malloc(20*sizeof(char));
 	char* p = (char *)malloc(20*sizeof(char));
-
+printf("2\n");
 	//Isso sera alterado quando comecarmos a ler strings ao inves de caracteres
 	char c;
 	char caracter[2];
 	int numeroLinha = 0;
 	int aux=0;
 	int flag = 0;
-	do{
-		c = fgetc(codigo);
-		if(feof(codigo)){
-			break;
-		}
-		caracter[0] = c;
-		caracter[1] = '\0';
-
+	char** vetor = (char **)malloc(4*sizeof(char *));
+	int i;
+	for(i=0;i<4;i++){
+		vetor[i] = (char *)malloc(20*sizeof(char));
+	}
+	
+	int* posicaoArquivo = (int *)malloc(sizeof(int));
+	*posicaoArquivo = 0;
+	printf("3\n");
+	while(executaAnalisador(codigo, automato, 22, 7, tab, posicaoArquivo, vetor)) {
+			printf("%s\n",vetor[1]);
+		
+		/*
 		//Lixo no fim do arquivo
 		if(c=='\n'){
 			break;
@@ -118,10 +124,10 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 		numeroLinha = aux;
 
 
+*/
+	}
 
-
-	}while(1);
-
+/*
 	while(!vazia(naoTerminais)){
 		printf("O Nao Terminal Abaixo eh pai de: ");
 		imprimePilhaPosicaoAteTopo(cadeia, buscaPosicaoReconhecida(naoTerminais));
@@ -133,7 +139,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	}
 
 	printf("Cadeia reconhecida!\n");
-
+*/
 
 
 	return 1;

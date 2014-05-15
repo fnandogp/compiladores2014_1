@@ -26,6 +26,8 @@ int main (int argc, char *argv[]){
 		printf("\nArquivo não encontrado.\n\n");
 		return 0;
 	}
+	
+	
 
 	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,10,6);
 	char*** TABT = inicializaTABT(TABT, 7,2);
@@ -35,7 +37,15 @@ int main (int argc, char *argv[]){
 	FILE* tabelaGrafo = fopen("tabgrafo","r");
 	FILE* tabelaTerminais = fopen("tabt","r");
 	FILE* tabelaNaoTerminais = fopen("tabnt","r");
+	FILE* fp = fopen("automato","r");
+	FILE* tabSimbolos = fopen("simbolos","r");
 
+	Hash tab;
+	int result = iniciaTSR(tab,tabSimbolos);
+	// imprimeHash(tab);
+
+	int** matrix = inicializaMatrizAutomato(matrix,22,7);
+	carregaAutomato(matrix,22,7,fp);
 	carregaTABGRAFO(TABGRAFO,10,6,tabelaGrafo);
 
 	carregaTABT(TABT,7,2,tabelaTerminais);
@@ -44,7 +54,7 @@ int main (int argc, char *argv[]){
 
 	printf("\n");
 
-	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2);
+	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2, matrix, tab);
 
 	fclose(tabelaGrafo);
 	fclose(tabelaNaoTerminais);
