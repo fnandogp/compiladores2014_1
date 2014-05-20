@@ -1,2 +1,11 @@
-var 10 nome ;
+programa nomeprograma;
 
+var r : real ;
+var i, j : inteiro ;
+
+inicio
+	j := 0;
+	enquanto i < 10 faca
+		j := j + i;
+	fim
+fim
