@@ -11,15 +11,15 @@ int geraChave(int num){
 
 int iniciaTSR(Hash tab, FILE* arqSR){
 	inicializaHash(tab); //Inicializa a tabela como null;
-	char buffer[8]; //Define o tamanho do buffer (palavras de tamanho no maximo 6)
+	char buffer[50]; //Define o tamanho do buffer (palavras de tamanho no maximo 6)
 	char* pch;
 	if(arqSR!=NULL){ 
-		while(fgets(buffer, 8, arqSR)){
-		pch = strtok(buffer,"\n");
-		//printf("%s\n",pch);
-		insereS(tab, pch);
-	}
-			
+		while(fgets(buffer, 1000, arqSR)){
+			pch = strtok(buffer,"\n");
+			//printf("%s\n",pch);
+			insereS(tab, pch);
+		}
+
 		fclose(arqSR);
 		return 1;
 		
@@ -27,8 +27,6 @@ int iniciaTSR(Hash tab, FILE* arqSR){
 		printf("Falha ao abrir o arquivo");
 		return 0;
 	}
-
-
 }
 
 void insereTipo(Celula* item, char* simbolo){
