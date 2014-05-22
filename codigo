@@ -1,7 +1,7 @@
 programa nomeprograma;
 
 var r : real ;
-var i, j : inteiro ;
+var i, j : inteiro[40] ;
 
 inicio
 	j := 0;
