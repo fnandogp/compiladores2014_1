@@ -10,6 +10,25 @@
 #include "automato.h"
 #include "hash.h"
 
+
+int consultaTabVar(char* caracter){
+
+	char* pch;
+	FILE* tabVar = fopen("tabvar","r");
+	char buffer[100];
+	while(fgets(buffer,100,tabVar)){
+		pch = strtok(buffer, "\n");
+		if(strcmp(pch,caracter)==0){
+			fclose(tabVar);
+			return 1;
+		}
+	}
+	return 0;
+
+}
+
+
+
 void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab){
 	switch(tipoAcao){
 	case 1:
@@ -23,7 +42,11 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		//printf("Buffer = %s, Result = %d\n",buffer, consultaSR(tab,buffer));
 		if(consultaSR(tab, buffer)){
 			strcpy(tipoSimbolo,"PALAVRA RESERVADA");
-		}else{
+		}
+		else if(consultaTabVar(buffer)){
+			strcpy(tipoSimbolo,"VAIDEN");
+		}
+		else{
 			strcpy(tipoSimbolo,"IDENTIFICADOR");
 		}
 		break;
@@ -81,11 +104,11 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		estadoAtual = verificaProximoEstado(automato, estadoAtual, tipoLido, linhas, colunas); //Atualiza o estado atual
 		//printf("Estado = %d, Tipo Lido = %d, Prox Trans = %d, Trans Atual = %d\n",estadoAtual, tipoLido, proximaTransicao, transicaoAtual);
 		if(estadoAtual==7 && proximaTransicao==-1){
-		
+
 			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab); //Aplica as acoes semanticas
 			//printf("Fim!\n");
 			if(strcmp(tipoSimbolo, "PALAVRA RESERVADA")==0) {
-				
+
 				strcpy(vetor[0], "C2");
 				strcpy(vetor[1], buffer);
 				strcpy(vetor[2], buffer);
@@ -93,6 +116,11 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 			else if(strcmp(tipoSimbolo, "IDENTIFICADOR")==0) {
 				strcpy(vetor[0], "C1");
 				strcpy(vetor[1], "IDEN");
+				strcpy(vetor[2], buffer);
+			}
+			else if(strcmp(tipoSimbolo, "VAIDEN")==0) {
+				strcpy(vetor[0], "C1");
+				strcpy(vetor[1], "VAIDEN");
 				strcpy(vetor[2], buffer);
 			}
 			else if(strcmp(tipoSimbolo, "SIMBOLO RESERVADO")==0) {
@@ -112,9 +140,9 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 			posicao = 0;
 
 			*posicaoArquivo = SEEK_CUR;
-			
+
 			return 1;
-			
+
 
 		}else{
 			if(estadoAtual!=-1 && estadoAtual!=0){
@@ -126,7 +154,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 
 		}
 	}
-	
+
 	return 0;
 
 

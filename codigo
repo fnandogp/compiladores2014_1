@@ -1,11 +1,6 @@
 programa nomeprograma;
 
-var r : real ;
-var i, j : inteiro[40] ;
-
+var i, j : cadeia[40] de inteiro ;
 inicio
-	j := 0;
-	enquanto i < 10 faca
-		j := j + i;
-	fim
-fim
+r := 10
+fim .

@@ -40,13 +40,13 @@ char** inicializaTABGRAFO(char** matrix, int linhas, int colunas){
 }
 
 void carregaTABGRAFO(char **matrix, int linhas, int colunas, FILE* tabgrafo){
-	char buffer[50];
+	char buffer[100];
 	char* pch;
 	int nLinha=0;
 	int nColuna=0;
-	while(fgets(buffer,50,tabgrafo)!=NULL){
+	while(fgets(buffer,100,tabgrafo)!=NULL){
 		pch = strtok(buffer, "	\n");
-		while(pch!=NULL){
+		while(pch!=NULL && nColuna<6){
 			matrix[nLinha][nColuna] = atoi(pch);
 			nColuna++;
 			pch = strtok(NULL,"	\n");

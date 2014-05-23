@@ -29,7 +29,7 @@ int vaziaNTerminais(Pilha* p){
 void imprimePilhaPosicaoAteTopo(Pilha* p, int pos){
 	int i;
 	for(i=pos;i<p->topo;i++){
-		printf("%s ",p->elementos[i]);
+		printf("%s, ",p->elementos[i]);
 	}
 	printf("\n");
 }

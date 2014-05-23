@@ -24,22 +24,22 @@ int verificaLinhaTerminal(char*** TABNT, int linhas, char* naoTerminal){
 }
 
 
-int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab){
+int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab, FILE* tabVar){
 
 	//Inicializa as Pilhas
 	Pilha* cadeia = inicializarPilha(cadeia);
 	Pilha* naoTerminais = inicializarPilha(naoTerminais);
-	push(naoTerminais,"S",10,0);
+	push(naoTerminais,"progrm",10,0);
 
-	char* cadCaracteres = (char *)malloc(20*sizeof(char));
-	char* cadTerminais = (char *)malloc(20*sizeof(char));
-	char* p = (char *)malloc(20*sizeof(char));
+	char* cadCaracteres = (char *)malloc(50*sizeof(char));
+	char* cadTerminais = (char *)malloc(50*sizeof(char));
+	char* p = (char *)malloc(50*sizeof(char));
 
 	//Isso sera alterado quando comecarmos a ler strings ao inves de caracteres
-	char c;
-	char caracter[2];
+	char* caracter = (char *)malloc(50*sizeof(char));
 	int numeroLinha = 0;
 	int aux=0;
+	int aux2=0;
 	int flag = 0;
 	char** vetor = (char **)malloc(4*sizeof(char *));
 	int i;
@@ -50,18 +50,9 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	int* posicaoArquivo = (int *)malloc(sizeof(int));
 	*posicaoArquivo = 0;
 	while(executaAnalisador(codigo, automato, 22, 7, tab, posicaoArquivo, vetor)) {
-			printf("%s\n",vetor[1]);
-			strcpy(vetor[0], "");
-			strcpy(vetor[1], "");
-			strcpy(vetor[2], "");
-		
-		/*
-		//Lixo no fim do arquivo
-		if(c=='\n'){
-			break;
-		}
-		//Fim do lixo no fim do arquivo
 
+		strcpy(caracter, vetor[1]);
+		printf("%s\n", caracter);
 		if(aux==-1){
 			printf("Cadeia nao aceita\n");
 			return 0;
@@ -73,14 +64,19 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 				imprimirPilha(naoTerminais);
 				aux = atoi(ANASIN[buscaNoTopo(naoTerminais)][4])-1;
 				if(aux==-1) aux = -2;
-				if(aux!=-2 && strcmp(ANASIN[aux][1],caracter)!=0) aux = -2;
-				//printf("Linha = %d\n",aux);
+				if(aux!=-2){
+					while(aux!=-1 && strcmp(ANASIN[aux][1],caracter)!=0){ //Verifica os nos alternativos para procurar o caracter
+						aux = atoi(ANASIN[aux][3])-1;
+					}
+					if(aux==-1) aux = -2;
+				}
+				//printf("%s\n",caracter);
 				printf("O Nao Terminal abaixo eh pai de: ");
 				imprimePilhaPosicaoAteTopo(cadeia, buscaPosicaoReconhecida(naoTerminais));
 				desempilhaDaPosicaoAteTopo(cadeia,buscaPosicaoReconhecida(naoTerminais)); //Adicionar uma especie de fila aqui
 				strcpy(p, pop(naoTerminais));
 				push(cadeia,p,0,0);
-				printf("Desempilha o terminal %s\n",p);
+				printf("Desempilha o nao terminal %s\n",p);
 			}
 			if(vaziaNTerminais(naoTerminais) && aux==-2){
 				printf("Cadeia nao aceita\n");
@@ -89,10 +85,9 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 
 			// Para um Terminal encontrado
 			if(strcmp(ANASIN[aux][0],"T")==0){
-
 				// para caracter lido reconhecido
 				if(strcmp(ANASIN[aux][1],caracter)==0){
-					printf("Caracter %c aceito! Proxima linha = %d\n",c,atoi(ANASIN[aux][4])-1);
+					printf("Caracter %s aceito! Proxima linha = %d\n",caracter,atoi(ANASIN[aux][4])-1);
 					strcpy(cadCaracteres,ANASIN[aux][1]);
 					push(cadeia,cadCaracteres,0,0); //Insere na pilha o caracter reconhecido
 					imprimirPilha(cadeia);
@@ -119,16 +114,18 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 				printf("Nao terminal encontrado: %s! Devemos empilha-lo\n",cadTerminais);
 				imprimirPilha(naoTerminais);
 				aux = verificaLinhaTerminal(TABNT,linhasTabNT,cadTerminais); //Aux vai para a linha correspondente ao grafo do nao terminal
-			//	printf("Linha = %d\n",aux);
+				//printf("Linha = %d\n",aux);
 			}
 		}
 		numeroLinha = aux;
+		strcpy(vetor[0], "");
+		strcpy(vetor[1], "");
+		strcpy(vetor[2], "");
 
 
-*/
+
 	}
 
-/*
 	while(!vazia(naoTerminais)){
 		printf("O Nao Terminal Abaixo eh pai de: ");
 		imprimePilhaPosicaoAteTopo(cadeia, buscaPosicaoReconhecida(naoTerminais));
@@ -140,8 +137,6 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	}
 
 	printf("Cadeia reconhecida!\n");
-*/
-
 
 	return 1;
 

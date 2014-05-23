@@ -29,16 +29,17 @@ int main (int argc, char *argv[]){
 	
 	
 
-	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,10,6);
-	char*** TABT = inicializaTABT(TABT, 7,2);
-	char*** TABNT = inicializaTABNT(TABNT, 2, 3);
-	char*** ANASIN = inicializaANASIN(ANASIN, 10, 6);
+	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,78,6);
+	char*** TABT = inicializaTABT(TABT, 50,2);
+	char*** TABNT = inicializaTABNT(TABNT, 8, 3);
+	char*** ANASIN = inicializaANASIN(ANASIN, 78, 6);
 
 	FILE* tabelaGrafo = fopen("tabgrafo","r");
 	FILE* tabelaTerminais = fopen("tabt","r");
 	FILE* tabelaNaoTerminais = fopen("tabnt","r");
 	FILE* fp = fopen("automato","r");
 	FILE* tabSimbolos = fopen("simbolos","r");
+	FILE* tabVar = fopen("tabvar","r");
 
 	Hash tab;
 	int result = iniciaTSR(tab,tabSimbolos);
@@ -46,15 +47,16 @@ int main (int argc, char *argv[]){
 
 	int** matrix = inicializaMatrizAutomato(matrix,22,7);
 	carregaAutomato(matrix,22,7,fp);
-	carregaTABGRAFO(TABGRAFO,10,6,tabelaGrafo);
 
-	carregaTABT(TABT,7,2,tabelaTerminais);
-	carregaTABNT(TABNT,2,3,tabelaNaoTerminais);
-	carregaAnaSin(ANASIN,TABGRAFO,10,6,TABT,7,2,TABNT,2,3);
+
+	carregaTABGRAFO(TABGRAFO,78,6,tabelaGrafo);
+	carregaTABT(TABT,50,2,tabelaTerminais);
+	carregaTABNT(TABNT,8,3,tabelaNaoTerminais);
+	carregaAnaSin(ANASIN,TABGRAFO,78,6,TABT,50,2,TABNT,8,3);
 
 	printf("\n");
 
-	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,2, matrix, tab);
+	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,8, matrix, tab, tabVar);
 
 	fclose(tabelaGrafo);
 	fclose(tabelaNaoTerminais);

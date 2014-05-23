@@ -8,6 +8,6 @@
 #ifndef ANALISADORSINTATICO_H_
 #define ANALISADORSINTATICO_H_
 
-void analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab);
+void analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab, FILE* tabVar);
 
 #endif /* ANALISADORSINTATICO_H_ */

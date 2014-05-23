@@ -1,1 +1,11 @@
-dfaef
+programa nomeprograma;
+
+var r : inteiro ;
+var i, j : cadeia[40] de inteiro ;
+
+inicio
+	j := 0;
+	enquanto i < 10 faca
+		j := j + i;
+	fim
+fim

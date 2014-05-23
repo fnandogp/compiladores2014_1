@@ -1,3 +1,8 @@
+programa
+NUMB
+cadeia
+IDEN
+VAIDEN
 +
 :-
 -
@@ -21,7 +26,6 @@
 {
 }
 :=
-programa
 inicio
 fim
 var
@@ -33,3 +37,14 @@ faca
 se
 entao
 senao
+lambda
+de
+PRIDEN
+lambda
+ou
+div
+mod
+e
+COIDEN
+STRING
+nao
