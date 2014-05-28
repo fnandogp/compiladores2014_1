@@ -1,2 +1,8 @@
-1	S	1
-2	M	8
+1	progrm	1
+2	block	6
+3	type	18
+4	statm	26
+5	expr	50
+6	siexpr	58
+7	term	64
+8	factor	70
