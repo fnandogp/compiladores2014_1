@@ -1,6 +1,6 @@
-programa nomeprograma;
-
-var i, j : cadeia[40] de inteiro ;
+programa teste3;
+var nome: cadeia[1,1];
+var sal: inteiro;
 inicio
-r := 10
+    nome := 1;
 fim .
