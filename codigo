@@ -1,6 +1,10 @@
-programa nomeprograma;
-
-var i, j : cadeia[40] de inteiro ;
+programa teste3;
+var nome: STRING;
+var sal: inteiro;
 inicio
-r := 10
-fim .
+    nome := thiago;
+    se sal > 10 entao
+       sal := 20;
+    enquanto sal < 50 faca
+       sal := sal - 10;
+fim.

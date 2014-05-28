@@ -32,7 +32,7 @@ void carregaAutomato(int **matrix, int linhas, int colunas, FILE* automato){
 	char* pch;
 	int nLinha=0;
 	int nColuna=0;
-	while(fgets(buffer,50,automato)!=NULL){
+	while(fgets(buffer,1000,automato)!=NULL){
 		pch = strtok(buffer, " \n");
 		while(pch!=NULL){
 			matrix[nLinha][nColuna] = atoi(pch);

@@ -27,12 +27,10 @@ int main (int argc, char *argv[]){
 		return 0;
 	}
 	
-	
-
-	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,78,6);
+	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,79,6);
 	char*** TABT = inicializaTABT(TABT, 50,2);
 	char*** TABNT = inicializaTABNT(TABNT, 8, 3);
-	char*** ANASIN = inicializaANASIN(ANASIN, 78, 6);
+	char*** ANASIN = inicializaANASIN(ANASIN, 79, 6);
 
 	FILE* tabelaGrafo = fopen("tabgrafo","r");
 	FILE* tabelaTerminais = fopen("tabt","r");
@@ -49,10 +47,10 @@ int main (int argc, char *argv[]){
 	carregaAutomato(matrix,22,7,fp);
 
 
-	carregaTABGRAFO(TABGRAFO,78,6,tabelaGrafo);
+	carregaTABGRAFO(TABGRAFO,79,6,tabelaGrafo);
 	carregaTABT(TABT,50,2,tabelaTerminais);
 	carregaTABNT(TABNT,8,3,tabelaNaoTerminais);
-	carregaAnaSin(ANASIN,TABGRAFO,78,6,TABT,50,2,TABNT,8,3);
+	carregaAnaSin(ANASIN,TABGRAFO,79,6,TABT,50,2,TABNT,8,3);
 
 	printf("\n");
 

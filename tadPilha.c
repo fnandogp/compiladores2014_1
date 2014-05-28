@@ -10,9 +10,9 @@
 
 struct pilha{
 	int topo;
-	int reconhecidoAte[20];
-	int no[20];
-	char elementos[20][10]; //Pilha de tamanho 20 de strings de ate 10 caracteres
+	int reconhecidoAte[40];
+	int no[40];
+	char elementos[40][10]; //Pilha de tamanho 20 de strings de ate 10 caracteres
 };
 
 
@@ -35,7 +35,7 @@ void imprimePilhaPosicaoAteTopo(Pilha* p, int pos){
 }
 
 int cheia(Pilha* p){
-	if(p->topo==20)return 1;
+	if(p->topo==40)return 1;
 	return 0;
 }
 

@@ -98,6 +98,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 	int posicao = 0;
 	while((simbolo=fgetc(arquivoEntrada))!=EOF){
 
+		//printf("Simbolo = %c\n",simbolo);
 		tipoLido = verificaSimboloLido(simbolo); //Verifica o tipo do simbolo lido
 		proximaTransicao = verificaProximaTransicao(automato, estadoAtual,tipoLido, linhas, colunas);//Busca a proxima transição
 		transicaoAtual = verificaTransicaoAtual(automato, estadoAtual, tipoLido, linhas, colunas);//Verifica qual eh a transicao atual
@@ -106,7 +107,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		if(estadoAtual==7 && proximaTransicao==-1){
 
 			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab); //Aplica as acoes semanticas
-			//printf("Fim!\n");
+			printf("Fim!\n");
 			if(strcmp(tipoSimbolo, "PALAVRA RESERVADA")==0) {
 
 				strcpy(vetor[0], "C2");
