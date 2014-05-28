@@ -1,9 +1,11 @@
 *.zip
 trab2
 trab3
+trab4
 *.gch
 .cproject
 .project
+*~
 
 # Object files
 *.o
