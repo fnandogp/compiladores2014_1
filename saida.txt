@@ -40,7 +40,7 @@ T se 39 46 40 -1
 N expr 40 -1 41 -1 
 T entao 41 -1 42 -1 
 N statm 42 -1 43 -1 
-T senao 43 45 46 -1 
+T senao 43 45 44 -1 
 N statm 44 -1 45 -1 
 T lambda 45 -1 -1 -1 
 T enquanto 46 16 47 -1 
@@ -82,25 +82,16 @@ Fim!
 
 
 Linha 1 | Lexema: "programa"
-Imprimindo Pilha
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 2
 Fim!
 
 
 Linha 2 | Lexema: "IDEN"
-Imprimindo Pilha
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 3
 Fim!
 
 
 Linha 3 | Lexema: ";"
-Imprimindo Pilha
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 4
 Fim!
 
@@ -108,35 +99,17 @@ Fim!
 Linha 4 | Lexema: "var"
 Não terminal encontrado: "block". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 5. Vai para a linha: 6
-Imprimindo Pilha
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 7
 Fim!
 
 
 Linha 7 | Lexema: "IDEN"
-Imprimindo Pilha
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 8
 Fim!
 
 
 Linha 8 | Lexema: ":"
 Não reconhecido. Alternativo na linha: 10
-Imprimindo Pilha
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 11
 Fim!
 
@@ -146,84 +119,30 @@ Não terminal encontrado: "type". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 12. Vai para a linha: 18
 Não reconhecido. Alternativo na linha: 19
 Não reconhecido. Alternativo na linha: 79
-Imprimindo Pilha
-STRING - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-type - 10 - 7
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 12.
-Imprimindo Pilha
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 13
 Fim!
 
 
 Linha 13 | Lexema: "var"
 Não reconhecido. Alternativo na linha: 6
-Imprimindo Pilha
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 7
 Fim!
 
 
 Linha 7 | Lexema: "IDEN"
-Imprimindo Pilha
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 8
 Fim!
 
 
 Linha 8 | Lexema: ":"
 Não reconhecido. Alternativo na linha: 10
-Imprimindo Pilha
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 11
 Fim!
 
@@ -231,44 +150,13 @@ Fim!
 Linha 11 | Lexema: "inteiro"
 Não terminal encontrado: "type". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 12. Vai para a linha: 18
-Imprimindo Pilha
-inteiro - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-type - 10 - 12
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 12.
-Imprimindo Pilha
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 13
 Fim!
 
@@ -276,21 +164,6 @@ Fim!
 Linha 13 | Lexema: "inicio"
 Não reconhecido. Alternativo na linha: 6
 Não reconhecido. Alternativo na linha: 14
-Imprimindo Pilha
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -299,44 +172,11 @@ Linha 15 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -352,61 +192,22 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 17
-term - 58 - 17
-siexpr - 49 - 17
-expr - 30 - 17
-statm - 14 - 15
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 17
-siexpr - 49 - 17
-expr - 30 - 17
-statm - 14 - 15
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 17
-expr - 30 - 17
-statm - 14 - 15
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -414,60 +215,15 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 17
-statm - 14 - 15
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 14 - 15
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -476,48 +232,11 @@ Linha 15 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -533,63 +252,22 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 19
-term - 58 - 19
-siexpr - 49 - 19
-expr - 30 - 19
-statm - 14 - 17
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 19
-siexpr - 49 - 19
-expr - 30 - 19
-statm - 14 - 17
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 19
-expr - 30 - 19
-statm - 14 - 17
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -597,64 +275,15 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 19
-statm - 14 - 17
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 14 - 17
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -666,26 +295,6 @@ Não reconhecido. Alternativo na linha: 29
 Não reconhecido. Alternativo na linha: 35
 Não reconhecido. Alternativo na linha: 39
 Não reconhecido. Alternativo na linha: 46
-Imprimindo Pilha
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 47
 Fim!
 
@@ -701,27 +310,6 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 oi
@@ -729,64 +317,21 @@ Fim!
 
 
 Linha -1 | Lexema: ">="
-Imprimindo Pilha
-factor - 63 - 20
-term - 58 - 20
-siexpr - 49 - 20
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 20
-siexpr - 49 - 20
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 20
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
 Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
-Imprimindo Pilha
->= - 0 - 1
-siexpr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 52
 Fim!
 
@@ -801,95 +346,24 @@ Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 6
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
 Não reconhecido. Alternativo na linha: 71
-Imprimindo Pilha
-NUMB - 0 - 1
->= - 0 - 1
-siexpr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: "faca"
-Imprimindo Pilha
-factor - 63 - 22
-term - 58 - 22
-siexpr - 51 - 22
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 22
-siexpr - 51 - 22
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 51 - 22
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 0.
-Imprimindo Pilha
-expr - 46 - 20
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 48.
-Imprimindo Pilha
-faca - 0 - 1
-expr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 49
 Fim!
 
@@ -898,58 +372,11 @@ Linha 49 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 0. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-faca - 0 - 1
-expr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-faca - 0 - 1
-expr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -965,71 +392,22 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-faca - 0 - 1
-expr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 24
-term - 58 - 24
-siexpr - 49 - 24
-expr - 30 - 24
-statm - 48 - 22
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 24
-siexpr - 49 - 24
-expr - 30 - 24
-statm - 48 - 22
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 24
-expr - 30 - 24
-statm - 48 - 22
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -1037,78 +415,16 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 24
-statm - 48 - 22
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-faca - 0 - 1
-expr - 0 - 1
-enquanto - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 48 - 22
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 0.
-Imprimindo Pilha
-statm - 14 - 19
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -1117,56 +433,11 @@ Linha 15 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -1184,67 +455,22 @@ Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
 Não reconhecido. Alternativo na linha: 71
 Não reconhecido. Alternativo na linha: 72
-Imprimindo Pilha
-STRING - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 23
-term - 58 - 23
-siexpr - 49 - 23
-expr - 30 - 23
-statm - 14 - 21
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 23
-siexpr - 49 - 23
-expr - 30 - 23
-statm - 14 - 21
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 23
-expr - 30 - 23
-statm - 14 - 21
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -1252,72 +478,15 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 23
-statm - 14 - 21
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 14 - 21
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -1326,60 +495,11 @@ Linha 15 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -1395,69 +515,22 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 25
-term - 58 - 25
-siexpr - 49 - 25
-expr - 30 - 25
-statm - 14 - 23
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 25
-siexpr - 49 - 25
-expr - 30 - 25
-statm - 14 - 23
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 25
-expr - 30 - 25
-statm - 14 - 23
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -1465,76 +538,15 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 25
-statm - 14 - 23
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 14 - 23
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -1543,64 +555,11 @@ Linha 15 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -1618,71 +577,22 @@ Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
 Não reconhecido. Alternativo na linha: 71
 Não reconhecido. Alternativo na linha: 72
-Imprimindo Pilha
-STRING - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 27
-term - 58 - 27
-siexpr - 49 - 27
-expr - 30 - 27
-statm - 14 - 25
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 27
-siexpr - 49 - 27
-expr - 30 - 27
-statm - 14 - 25
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 27
-expr - 30 - 27
-statm - 14 - 25
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -1690,80 +600,15 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 27
-statm - 14 - 25
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ";"
-Imprimindo Pilha
-statm - 14 - 25
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 16.
-Imprimindo Pilha
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 15
 Fim!
 
@@ -1774,34 +619,6 @@ Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 2
 Não reconhecido. Alternativo na linha: 29
 Não reconhecido. Alternativo na linha: 35
 Não reconhecido. Alternativo na linha: 39
-Imprimindo Pilha
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 40
 Fim!
 
@@ -1817,104 +634,24 @@ Não terminal encontrado: "term". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
-Imprimindo Pilha
-IDEN - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: "<"
-Imprimindo Pilha
-factor - 63 - 28
-term - 58 - 28
-siexpr - 49 - 28
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 28
-siexpr - 49 - 28
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 28
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
-Imprimindo Pilha
-< - 0 - 1
-siexpr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 52
 Fim!
 
@@ -1929,111 +666,24 @@ Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 6
 Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
 Não reconhecido. Alternativo na linha: 71
-Imprimindo Pilha
-NUMB - 0 - 1
-< - 0 - 1
-siexpr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: "entao"
-Imprimindo Pilha
-factor - 63 - 30
-term - 58 - 30
-siexpr - 51 - 30
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 30
-siexpr - 51 - 30
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 51 - 30
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 0.
-Imprimindo Pilha
-expr - 39 - 28
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 41.
-Imprimindo Pilha
-entao - 0 - 1
-expr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 42
 Fim!
 
@@ -2042,74 +692,11 @@ Linha 42 | Lexema: "PRIDEN"
 Não terminal encontrado: "statm". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 43. Vai para a linha: 26
 Não reconhecido. Alternativo na linha: 29
-Imprimindo Pilha
-PRIDEN - 0 - 1
-entao - 0 - 1
-expr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 30
 Fim!
 
 
 Linha 30 | Lexema: "("
-Imprimindo Pilha
-( - 0 - 1
-PRIDEN - 0 - 1
-entao - 0 - 1
-expr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 31
 Fim!
 
@@ -2127,79 +714,22 @@ Não terminal encontrado: "factor". Devemos empilha-lo.
 Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
 Não reconhecido. Alternativo na linha: 71
 Não reconhecido. Alternativo na linha: 72
-Imprimindo Pilha
-STRING - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-entao - 0 - 1
-expr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
 Linha -1 | Lexema: ")"
-Imprimindo Pilha
-factor - 63 - 32
-term - 58 - 32
-siexpr - 49 - 32
-expr - 30 - 32
-statm - 41 - 30
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 65.
 Voltando novamente, para linha 66.
 Voltando novamente, para linha 67.
 Voltando novamente, para linha 68.
 Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-term - 58 - 32
-siexpr - 49 - 32
-expr - 30 - 32
-statm - 41 - 30
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 60.
 Voltando novamente, para linha 61.
 Voltando novamente, para linha 62.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-siexpr - 49 - 32
-expr - 30 - 32
-statm - 41 - 30
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 51.
 Voltando novamente, para linha 53.
 Voltando novamente, para linha 54.
@@ -2207,76 +737,300 @@ Voltando novamente, para linha 55.
 Voltando novamente, para linha 56.
 Voltando novamente, para linha 57.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-expr - 30 - 32
-statm - 41 - 30
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 32.
 Voltando novamente, para linha 33.
-Imprimindo Pilha
-) - 0 - 1
-expr - 0 - 1
-( - 0 - 1
-PRIDEN - 0 - 1
-entao - 0 - 1
-expr - 0 - 1
-se - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-; - 0 - 1
-statm - 0 - 1
-inicio - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-type - 0 - 1
-: - 0 - 1
-IDEN - 0 - 1
-var - 0 - 1
-; - 0 - 1
-IDEN - 0 - 1
-programa - 0 - 1
 Lexema aceito. O sucessor é a linha: 0
 Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 Fim!
 
 
-Linha -1 | Lexema: "PRIDEN"
-Imprimindo Pilha
-statm - 41 - 30
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
+Linha -1 | Lexema: "senao"
 Voltando para linha 43.
-Voltando novamente, para linha 45.
+Lexema aceito. O sucessor é a linha: 44
+Fim!
+
+
+Linha 44 | Lexema: "PRIDEN"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 45. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Lexema aceito. O sucessor é a linha: 30
+Fim!
+
+
+Linha 30 | Lexema: "("
+Lexema aceito. O sucessor é a linha: 31
+Fim!
+
+
+Linha 31 | Lexema: "STRING"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 32. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Não reconhecido. Alternativo na linha: 71
+Não reconhecido. Alternativo na linha: 72
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ")"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-statm - 14 - 27
-block - 3 - 4
-progrm - 10 - 1
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Voltando novamente, para linha 55.
+Voltando novamente, para linha 56.
+Voltando novamente, para linha 57.
+Voltando novamente, para linha -1.
+Voltando para linha 32.
+Voltando novamente, para linha 33.
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 45.
+Voltando novamente, para linha -1.
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "PRIDEN"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Lexema aceito. O sucessor é a linha: 30
+Fim!
+
+
+Linha 30 | Lexema: "("
+Lexema aceito. O sucessor é a linha: 31
+Fim!
+
+
+Linha 31 | Lexema: "IDEN"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 32. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ")"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Voltando novamente, para linha 55.
+Voltando novamente, para linha 56.
+Voltando novamente, para linha 57.
+Voltando novamente, para linha -1.
+Voltando para linha 32.
+Voltando novamente, para linha 33.
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "IDEN"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Lexema aceito. O sucessor é a linha: 27
+oi
+Fim!
+
+
+Linha 27 | Lexema: ":="
+Lexema aceito. O sucessor é a linha: 28
+Fim!
+
+
+Linha 28 | Lexema: "NUMB"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 0. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Não reconhecido. Alternativo na linha: 71
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Voltando novamente, para linha 55.
+Voltando novamente, para linha 56.
+Voltando novamente, para linha 57.
+Voltando novamente, para linha -1.
+Voltando para linha 0.
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "PRIDEN"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Lexema aceito. O sucessor é a linha: 30
+Fim!
+
+
+Linha 30 | Lexema: "("
+Lexema aceito. O sucessor é a linha: 31
+Fim!
+
+
+Linha 31 | Lexema: "IDEN"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 32. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ")"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Voltando novamente, para linha 55.
+Voltando novamente, para linha 56.
+Voltando novamente, para linha 57.
+Voltando novamente, para linha -1.
+Voltando para linha 32.
+Voltando novamente, para linha 33.
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "fim"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Não reconhecido. Alternativo na linha: 35
+Não reconhecido. Alternativo na linha: 39
+Não reconhecido. Alternativo na linha: 46
+Não reconhecido. Alternativo na linha: 16
+Não reconhecido. Alternativo na linha: 17
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "fim"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Não reconhecido. Alternativo na linha: 35
+Não reconhecido. Alternativo na linha: 39
+Não reconhecido. Alternativo na linha: 46
+Não reconhecido. Alternativo na linha: 16
+Não reconhecido. Alternativo na linha: 17
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: "."
 Voltando para linha 16.
 Voltando novamente, para linha 17.
 Voltando novamente, para linha -1.
-Imprimindo Pilha
-block - 3 - 4
-progrm - 10 - 1
 Voltando para linha 5.
-Voltando novamente, para linha -1.
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
 
 
-!! Cadeia nao aceita !!
+!! Cadeia reconhecida !!
 
 

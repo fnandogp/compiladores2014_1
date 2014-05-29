@@ -1,19 +1,9 @@
 programa teste3;
 var nome: STRING;
-var sal: inteiro;
+var sal: cadeia[20] de inteiro;
 inicio
-	leiacad(nome);
-	leianum(sal);
-	enquanto sal >= 0 faca
-		imprimacad(nome);
-		imprimacad("    ");
-		imprimanum(sal);
-		imprimacad("	");
-	se sal < 100,00 entao
-		imprimacad("ISENTO")
-	senao
-		imprimacad("COBRAR IMPOSTO");
-	leiacad(nome);
-	leianum(sal);
-	fim;
-fim. 
+   nome := "Thiago";
+   se nome > 100 entao
+      sal := 20;
+   fim;
+fim.
