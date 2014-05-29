@@ -38,13 +38,17 @@ int main (int argc, char *argv[]){
 	FILE* fp = fopen("automato","r");
 	FILE* tabSimbolos = fopen("simbolos","r");
 	FILE* tabVar = fopen("tabvar","r");
+	FILE* tabProc = fopen("tabproc", "r");
 
 	Hash tab;
 	int result = iniciaTSR(tab,tabSimbolos);
 	// imprimeHash(tab);
 
-	int** matrix = inicializaMatrizAutomato(matrix,22,7);
-	carregaAutomato(matrix,22,7,fp);
+	Hash tabProcedimentos;
+	int tProc = iniciaTSR(tabProcedimentos, tabProc);
+
+	int** matrix = inicializaMatrizAutomato(matrix,34,7);
+	carregaAutomato(matrix,34,7,fp);
 
 
 	carregaTABGRAFO(TABGRAFO,79,6,tabelaGrafo);
@@ -54,7 +58,7 @@ int main (int argc, char *argv[]){
 
 	printf("\n");
 
-	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,8, matrix, tab, tabVar);
+	analisadorSintatico(codigo,TABGRAFO,TABT,TABNT,ANASIN,8, matrix, tab, tabVar, tabProcedimentos);
 
 	fclose(tabelaGrafo);
 	fclose(tabelaNaoTerminais);

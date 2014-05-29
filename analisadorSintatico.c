@@ -24,7 +24,7 @@ int verificaLinhaTerminal(char*** TABNT, int linhas, char* naoTerminal){
 }
 
 
-int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab, FILE* tabVar){
+int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TABNT, char*** ANASIN, int linhasTabNT, int** automato, Hash tab, FILE* tabVar, Hash tabProc){
 
 	//Inicializa as Pilhas
 	Pilha* cadeia = inicializarPilha(cadeia);
@@ -49,8 +49,8 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	
 	int* posicaoArquivo = (int *)malloc(sizeof(int));
 	*posicaoArquivo = 0;
-	while(executaAnalisador(codigo, automato, 22, 7, tab, posicaoArquivo, vetor)) {
-
+	while(executaAnalisador(codigo, automato, 34, 7, tab, posicaoArquivo, vetor, tabProc)) {
+		
 		strcpy(caracter, vetor[1]);
 		printf("\n\nLinha %d | Lexema: \"%s\"\n", aux+1, caracter);
 
@@ -150,7 +150,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 		push(cadeia,p,0,0);
 	}
 
-	printf("\n\n!! Cadeira reconhecida !!\n\n\n");
+	printf("\n\n!! Cadeia reconhecida !!\n\n\n");
 
 	return 1;
 

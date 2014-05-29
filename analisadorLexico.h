@@ -10,7 +10,7 @@
 #include "hash.h"
 
 
-int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas,  Hash tab, int* posicaoArquivo, char** vetor);
-void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab);
+int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas,  Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc);
+void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab, Hash tabProc);
 
 #endif /* ANALISADORLEXICO_H_ */

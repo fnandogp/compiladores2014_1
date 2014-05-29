@@ -29,7 +29,7 @@ int consultaTabVar(char* caracter){
 
 
 
-void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab){
+void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab, Hash tabProc, FILE* arquivoEntrada){	
 	switch(tipoAcao){
 	case 1:
 		buffer[posicao] = simbolo;
@@ -45,6 +45,9 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		}
 		else if(consultaTabVar(buffer)){
 			strcpy(tipoSimbolo,"VAIDEN");
+		}
+		else if(consultaSR(tabProc, buffer)){
+			strcpy(tipoSimbolo, "PRIDEN");
 		}
 		else{
 			strcpy(tipoSimbolo,"IDENTIFICADOR");
@@ -64,9 +67,17 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		buffer[posicao] = simbolo;
 		buffer[posicao+1] = '\0';
 		if(consultaSR(tab, buffer)){
+			printf("oi\n");
 			strcpy(tipoSimbolo,"SIMBOLO RESERVADO");
 		}else{
-			strcpy(tipoSimbolo,"SIMBOLO ESPECIAL");
+			buffer[posicao] = '\0';
+			//fseek(arquivoEntrada,-1,SEEK_CUR);
+			//printf("%s\n",buffer);
+			if(consultaSR(tab,buffer)){
+				strcpy(tipoSimbolo,"SIMBOLO RESERVADO");
+			}else{
+				strcpy(tipoSimbolo, "SIMBOLO ESPECIAL");
+			}		
 		}
 
 		//Verifica se esta na tabela de simbolos reservados
@@ -80,12 +91,20 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 			strcpy(tipoSimbolo,"SIMBOLO ESPECIAL");
 		}
 		break;
+	case 10:
+		buffer[posicao] = '\0';
+		strcpy(tipoSimbolo,"STRING");
+		break;
+	case 11:
+		buffer[posicao] = '\0';
+		strcpy(tipoSimbolo,"NUMERO REAL");
+		break;
 	default:
 		break;
 	}
 }
 
-int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor){
+int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc){
 
 	fseek(arquivoEntrada,0,*posicaoArquivo);
 	char simbolo;
@@ -96,6 +115,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 	int proximaTransicao;
 	int transicaoAtual = 0;
 	int posicao = 0;
+	int verificaSimboloTamanho2 = 0;
 	while((simbolo=fgetc(arquivoEntrada))!=EOF){
 
 		//printf("Simbolo = %c\n",simbolo);
@@ -104,12 +124,20 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		transicaoAtual = verificaTransicaoAtual(automato, estadoAtual, tipoLido, linhas, colunas);//Verifica qual eh a transicao atual
 		estadoAtual = verificaProximoEstado(automato, estadoAtual, tipoLido, linhas, colunas); //Atualiza o estado atual
 		//printf("Estado = %d, Tipo Lido = %d, Prox Trans = %d, Trans Atual = %d\n",estadoAtual, tipoLido, proximaTransicao, transicaoAtual);
+		if(estadoAtual==8){
+			if(strlen(buffer)==1){
+				estadoAtual=7;
+				proximaTransicao=-1;
+			}else if(strlen(buffer)==2){
+				
+				
+			}
+			//printf("Simbolo = %c, buffer = %s\n",simbolo, buffer);
+		}
 		if(estadoAtual==7 && proximaTransicao==-1){
-
-			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab); //Aplica as acoes semanticas
+			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada); //Aplica as acoes semanticas
 			printf("Fim!\n");
 			if(strcmp(tipoSimbolo, "PALAVRA RESERVADA")==0) {
-
 				strcpy(vetor[0], "C2");
 				strcpy(vetor[1], buffer);
 				strcpy(vetor[2], buffer);
@@ -125,6 +153,9 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 				strcpy(vetor[2], buffer);
 			}
 			else if(strcmp(tipoSimbolo, "SIMBOLO RESERVADO")==0) {
+				if(strlen(buffer)==2){
+					verificaSimboloTamanho2 = 1;
+				}
 				strcpy(vetor[0], "C4");
 				strcpy(vetor[1], buffer);
 				strcpy(vetor[2], buffer);
@@ -134,9 +165,30 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 				strcpy(vetor[1], "NUMB");
 				strcpy(vetor[2], buffer);
 			}
+			else if(strcmp(tipoSimbolo, "STRING")==0){
+				verificaSimboloTamanho2 = 1;
+				strcpy(vetor[0], "C5");
+				strcpy(vetor[1], "STRING");
+				strcpy(vetor[2], buffer);
+			}
+			else if(strcmp(tipoSimbolo, "NUMERO REAL")==0) {
+				strcpy(vetor[0], "C3");
+				strcpy(vetor[1], "NUMB");
+				strcpy(vetor[2], buffer);
+			}
+			else if(strcmp(tipoSimbolo, "PRIDEN")==0) {
+				strcpy(vetor[0], "C1");
+				strcpy(vetor[1], "PRIDEN");
+				strcpy(vetor[2], buffer);
+			}
+
+			if(verificaSimboloTamanho2!=1){
+			
+				fseek(arquivoEntrada,-1,SEEK_CUR);
+			}
 			//printf("%s - ",buffer);
 			//printf("%s\n",tipoSimbolo);
-			fseek(arquivoEntrada,-1,SEEK_CUR);
+			
 			estadoAtual = 0;
 			posicao = 0;
 
@@ -148,7 +200,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		}else{
 			if(estadoAtual!=-1 && estadoAtual!=0){
 				//printf("Pos = %c\n",simbolo);
-				acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab); //Aplica as acoes semanticas
+				acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada); //Aplica as acoes semanticas
 				posicao++;
 				//printf("%c -> Estado Atual = %d\n", simbolo, estadoAtual);
 			}

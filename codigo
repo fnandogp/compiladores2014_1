@@ -2,9 +2,14 @@ programa teste3;
 var nome: STRING;
 var sal: inteiro;
 inicio
-    nome := thiago;
-    se sal > 10 entao
-       sal := 20;
-    enquanto sal < 50 faca
-       sal := sal - 10;
-fim.
+   leiacad(nome);
+   leianum(sal);
+   enquanto sal >= 0 faca
+	imprimacad(nome);
+	imprimacad("    ");
+	imprimanum(sal); 
+	imprimacad("   ");
+	leiacad(nome);
+	leianum(sal);
+	fim;
+fim. 
