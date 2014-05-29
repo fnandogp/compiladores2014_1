@@ -62,7 +62,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 		while(1){
 			// para aux == -2 
 			while(aux==-2 && !vaziaNTerminais(naoTerminais)){
-				// imprimirPilha(naoTerminais);
+				imprimirPilha(naoTerminais);
 				aux = atoi(ANASIN[buscaNoTopo(naoTerminais)][4])-1;
 				printf("Voltando para linha %d.\n", aux+1);
 
@@ -98,7 +98,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 				if(strcmp(ANASIN[aux][1],caracter)==0){
 					strcpy(cadCaracteres,ANASIN[aux][1]);
 					push(cadeia,cadCaracteres,0,0); //Insere na pilha o caracter reconhecido
-					// imprimirPilha(cadeia);
+					imprimirPilha(cadeia);
 					aux = atoi(ANASIN[aux][4])-1; //Aux recebe a linha correspondente ao sucessor do no encontrado
 					printf("Lexema aceito. O sucessor é a linha: %d\n", aux+1);
 					if(aux==-1) {
