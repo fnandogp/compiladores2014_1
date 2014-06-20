@@ -1,9 +1,8 @@
 programa teste3;
-var nome: STRING;
-var sal: cadeia[20] de inteiro;
+var sal: inteiro;
+var teste: inteiro;
 inicio
-   nome := "Thiago";
-   se nome > 100 entao
-      sal := 20;
-   fim;
+   sal := 10;	
+   enquanto sal>10 faca
+      sal := sal + 1;
 fim.

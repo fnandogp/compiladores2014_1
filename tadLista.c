@@ -9,7 +9,7 @@ struct lista{
 	struct lista *prox;
 };
 
-Lista* lista_contruir (void) {
+Lista* lista_construir (void) {
 	return NULL;
 }
 
@@ -49,5 +49,16 @@ Lista* lista_consultar (Lista* l, char palavra[]) {
 		aux = aux->prox;
 	}
 	return NULL;
+}
+
+void imprimeVariaveis(Lista* l, char* tipo, FILE* arquivo){
+	
+	printf("entrei aqui\n");
+	Lista* aux = l;
+	while(aux!=NULL){
+		printf("IMPRIMINDO - %s\n",aux->info);
+		fprintf(arquivo, "	%s %s;\n", tipo, aux->info);
+		aux = aux->prox;
+	}
 }
 

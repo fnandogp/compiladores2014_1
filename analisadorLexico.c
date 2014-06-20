@@ -9,6 +9,7 @@
 #include <string.h>
 #include "automato.h"
 #include "hash.h"
+#include "tadLista.h"
 
 
 int consultaTabVar(char* caracter){
@@ -29,7 +30,7 @@ int consultaTabVar(char* caracter){
 
 
 
-void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab, Hash tabProc, FILE* arquivoEntrada){	
+void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo, char simbolo, Hash tab, Hash tabProc, FILE* arquivoEntrada, Lista* variaveis){	
 	switch(tipoAcao){
 	case 1:
 		buffer[posicao] = simbolo;
@@ -43,7 +44,7 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		if(consultaSR(tab, buffer)){
 			strcpy(tipoSimbolo,"PALAVRA RESERVADA");
 		}
-		else if(consultaTabVar(buffer)){
+		else if(lista_consultar(variaveis, buffer)!=NULL){
 			strcpy(tipoSimbolo,"VAIDEN");
 		}
 		else if(consultaSR(tabProc, buffer)){
@@ -104,7 +105,7 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 	}
 }
 
-int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc){
+int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc, Lista* variaveis){
 
 	fseek(arquivoEntrada,0,*posicaoArquivo);
 	char simbolo;
@@ -135,7 +136,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 			//printf("Simbolo = %c, buffer = %s\n",simbolo, buffer);
 		}
 		if(estadoAtual==7 && proximaTransicao==-1){
-			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada); //Aplica as acoes semanticas
+			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada, variaveis); //Aplica as acoes semanticas
 			printf("Fim!\n");
 			if(strcmp(tipoSimbolo, "PALAVRA RESERVADA")==0) {
 				strcpy(vetor[0], "C2");
@@ -200,7 +201,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		}else{
 			if(estadoAtual!=-1 && estadoAtual!=0){
 				//printf("Pos = %c\n",simbolo);
-				acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada); //Aplica as acoes semanticas
+				acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada, variaveis); //Aplica as acoes semanticas
 				posicao++;
 				//printf("%c -> Estado Atual = %d\n", simbolo, estadoAtual);
 			}
