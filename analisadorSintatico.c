@@ -19,7 +19,8 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 	switch(acao){
 		case 1: //Cria o arquivo intermediario
 			strcpy(nomeArquivo, info[2]);
-			arquivo = fopen(info[2], "w");
+			strcat(nomeArquivo, ".c");
+			arquivo = fopen(nomeArquivo, "w");
 			fprintf(arquivo, "#include <stdio.h>\n");
 			fprintf(arquivo, "#include <stdlib.h>\n");
 			fprintf(arquivo, "#include <string.h>\n\n\n");
@@ -43,7 +44,7 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			if(*flag == 1){
 				fprintf(arquivo, "%s ", info[2]);
 			}else{
-				fprintf(arquivo, "%s;\n", info[2]);
+				fprintf(arquivo, "%s", info[2]);
 			}
 			fclose(arquivo);
 			break;
@@ -54,12 +55,12 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			break;
 		case 6: // ) dentro do SE
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, ")", info[2]);
+			fprintf(arquivo, ")");
 			fclose(arquivo);
 			break;
 		case 7: // not dentro do SE
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, "!", info[2]);
+			fprintf(arquivo, "!");
 			fclose(arquivo);
 			break;
 		case 8: // > dentro do SE
@@ -95,7 +96,7 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 		case 14: // entao
 			*flag = 0;
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, "){\n");
+			fprintf(arquivo, ")");
 			fclose(arquivo);
 			break;
 			
@@ -112,13 +113,13 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 		case 17: //senao
 			*flag = 2;
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, "	}else{\n");
+			fprintf(arquivo, "else");
 			fclose(arquivo);
 			break;
 		case 18: //lambda statm
 			if(*flag>0){
 				arquivo = fopen(nomeArquivo, "a");
-				fprintf(arquivo, "}\n");
+				//fprintf(arquivo, "}\n");
 				fclose(arquivo);			
 			}
 			break;	
@@ -131,7 +132,7 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 		case 20: //faca
 			*flag = 0;
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, "){\n");
+			fprintf(arquivo, ")\n");
 			fclose(arquivo);
 			break;
 		case 21: //sinal de +
@@ -153,7 +154,59 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			arquivo = fopen(nomeArquivo, "a");
 			fprintf(arquivo, "/");
 			fclose(arquivo);
-			break;		
+			break;
+		case 25: //inicio abre colchete
+		    arquivo = fopen(nomeArquivo, "a");
+		    fprintf(arquivo,"{\n");
+		    fclose(arquivo);
+		    break;
+		case 26: //fim fecha colchete
+			arquivo = fopen(nomeArquivo, "a");
+			fprintf(arquivo,"}\n");
+			fclose(arquivo);
+			break;
+		case 27: //Procedimento PRIDEN
+			arquivo = fopen(nomeArquivo, "a");
+			if(strcmp("leiacad",info[2])==0){
+				fprintf(arquivo,"scanf(\"%%s\\n\",");
+			}
+			else if(strcmp("leianum", info[2])==0){
+				fprintf(arquivo,"scanf(\"%%f\\n\",");
+			}
+			else if(strcmp("imprimacad", info[2])==0){
+				fprintf(arquivo, "printf(\"%%s\\n\",");
+			}
+			else if(strcmp("imprimanum", info[2])==0){
+				fprintf(arquivo, "printf(\"%%f\\n\",");
+			}
+			fclose(arquivo);
+			break;
+		case 28:
+			arquivo = fopen(nomeArquivo, "a");
+			//fprintf(arquivo,"%s", info[2]);
+			fclose(arquivo);
+			printf("------------------------ %s\n",info[2]);
+			break;
+		case 29:
+			arquivo = fopen(nomeArquivo, "a");
+			fprintf(arquivo,");");
+			fclose(arquivo);
+			break;
+		case 30:
+			arquivo = fopen(nomeArquivo, "a");
+			fprintf(arquivo, ";\n");
+			fclose(arquivo);
+			break;
+		case 31:
+			arquivo = fopen(nomeArquivo, "a");
+			int i;
+			fprintf(arquivo,"\"");
+			for(i=1;i<strlen(info[2])-1;i++){
+				fprintf(arquivo, "%c", info[2][i]);
+			}
+			fprintf(arquivo,"\"");
+			fclose(arquivo);
+			break;			
 		case 60: //Cria variavel
 			printf("\n\n Veremos \n\n %s\n", info[2]);
 			variaveis = lista_inserir(variaveis,info[2]);
@@ -211,14 +264,17 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 	}
 	
 	int* posicaoArquivo = (int *)malloc(sizeof(int));
+	int* linhaArquivo = (int *)malloc(sizeof(int));
+	*linhaArquivo = 1;
 	*posicaoArquivo = 0;
-	while(executaAnalisador(codigo, automato, 34, 7, tab, posicaoArquivo, vetor, tabProc, variaveis)) {
+	while(executaAnalisador(codigo, automato, 34, 7, tab, posicaoArquivo, vetor, tabProc, variaveis, linhaArquivo)) {
 		
 		strcpy(caracter, vetor[1]);
 		printf("\n\nLinha %d | Lexema: \"%s\"\n", aux+1, caracter);
 
 		if(aux==-1){
 			printf("\n\n!! Cadeia nao aceita !!\n\n\n");
+			//printf("\n\nErro na linha %d\n\n",*linhaArquivo);
 			return 0;
 		}
 		while(1){
@@ -279,6 +335,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 					//Caso nao haja mais nenhum no alternativo
 					if(aux==-2){
 						printf("\n\n!! Cadeia nao aceita !!\n\n\n");
+						//printf("\n\nErro na linha %d\n\n",*linhaArquivo);
 						return 0;
 					}
 					printf("Não reconhecido. Alternativo na linha: %d\n", aux+1);
@@ -306,7 +363,7 @@ int analisadorSintatico(FILE* codigo, char** TABGRAFO, char*** TABT, char*** TAB
 
 
 	}
-
+	imprimirPilha(naoTerminais);
 	while(!vazia(naoTerminais)){
 		// printf("O Nao Terminal Abaixo é pai de: ");
 		// imprimePilhaPosicaoAteTopo(cadeia, buscaPosicaoReconhecida(naoTerminais));

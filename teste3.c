@@ -7,18 +7,7 @@ int main(void){
 
 	int sal;
 	int teste;
+	int sal;
 	sal =10;
-	while(sal <20 )
-{
-	sal =sal +1;
-printf("%f",sal );}
-;
 	if(sal <20 ){
-printf("%f",sal );;
-printf("%s","SUCESS");;
-}
-else{
-	sal =0;
-}
-;
-}
+scanf("%f\n",

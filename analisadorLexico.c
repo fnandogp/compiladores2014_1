@@ -105,7 +105,7 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 	}
 }
 
-int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc, Lista* variaveis){
+int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colunas, Hash tab, int* posicaoArquivo, char** vetor, Hash tabProc, Lista* variaveis, int* linha){
 
 	fseek(arquivoEntrada,0,*posicaoArquivo);
 	char simbolo;
@@ -117,9 +117,10 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 	int transicaoAtual = 0;
 	int posicao = 0;
 	int verificaSimboloTamanho2 = 0;
+	
 	while((simbolo=fgetc(arquivoEntrada))!=EOF){
 
-		//printf("Simbolo = %c\n",simbolo);
+		
 		tipoLido = verificaSimboloLido(simbolo); //Verifica o tipo do simbolo lido
 		proximaTransicao = verificaProximaTransicao(automato, estadoAtual,tipoLido, linhas, colunas);//Busca a proxima transição
 		transicaoAtual = verificaTransicaoAtual(automato, estadoAtual, tipoLido, linhas, colunas);//Verifica qual eh a transicao atual
@@ -133,7 +134,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 				
 				
 			}
-			//printf("Simbolo = %c, buffer = %s\n",simbolo, buffer);
+		printf("Simbolo = %c, buffer = %s\n",simbolo, buffer);
 		}
 		if(estadoAtual==7 && proximaTransicao==-1){
 			acoesSemanticas(automato[transicaoAtual][5],buffer,posicao,tipoSimbolo,simbolo, tab, tabProc, arquivoEntrada, variaveis); //Aplica as acoes semanticas
@@ -209,6 +210,7 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 		}
 	}
 
+	printf("cheguei aqui\n");
 	return 0;
 
 
