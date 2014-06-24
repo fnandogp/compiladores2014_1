@@ -1,1 +1,8 @@
-dfaeffff
+programa teste3;
+var sal: inteiro;
+var teste: inteiro;
+inicio
+   sal := 10;	
+   enquanto sal>10 faca
+      sal := sal + 1;
+fim.

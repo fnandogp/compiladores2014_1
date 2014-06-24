@@ -1,0 +1,353 @@
+T programa 1 -1 2 -1 
+T IDEN 2 -1 3 1 
+T ; 3 -1 4 -1 
+N block 4 -1 5 -1 
+T . 5 -1 0 -1 
+T var 6 14 7 -1 
+T IDEN 7 -1 8 60 
+T , 8 10 9 -1 
+T IDEN 9 -1 8 60 
+T : 10 -1 11 -1 
+N type 11 -1 12 69 
+T ; 12 -1 13 -1 
+T IDEN 13 6 8 -1 
+T inicio 14 -1 15 -1 
+N statm 15 -1 16 -1 
+T ; 16 17 15 -1 
+T fim 17 -1 0 -1 
+T inteiro 18 19 0 -1 
+T cadeia 19 79 20 -1 
+T [ 20 -1 21 -1 
+T NUMB 21 -1 22 -1 
+T , 22 23 21 -1 
+T ] 23 -1 24 -1 
+T de 24 -1 25 -1 
+N type 25 -1 0 -1 
+T VAIDEN 26 29 27 -1 
+T := 27 -1 28 -1 
+N expr 28 -1 0 -1 
+T PRIDEN 29 35 30 -1 
+T ( 30 34 31 -1 
+N expr 31 -1 32 -1 
+T , 32 33 31 -1 
+T ) 33 -1 0 -1 
+T lambda 34 -1 0 -1 
+T inicio 35 39 36 -1 
+N statm 36 -1 37 -1 
+T ; 37 38 36 -1 
+T fim 38 -1 0 -1 
+T se 39 46 40 2 
+N expr 40 -1 41 -1 
+T entao 41 -1 42 -1 
+N statm 42 -1 43 -1 
+T senao 43 45 44 -1 
+N statm 44 -1 45 -1 
+T lambda 45 -1 -1 -1 
+T enquanto 46 16 47 -1 
+N expr 47 -1 48 -1 
+T faca 48 -1 49 -1 
+N statm 49 -1 0 -1 
+N siexpr 50 -1 51 -1 
+T = 51 53 52 -1 
+N siexpr 52 -1 0 -1 
+T < 53 54 52 -1 
+T > 54 55 52 -1 
+T <> 55 56 52 -1 
+T >= 56 57 52 -1 
+T <= 57 -1 52 -1 
+T + 58 63 59 -1 
+N term 59 -1 60 -1 
+T + 60 61 59 -1 
+T - 61 62 59 -1 
+T ou 62 -1 59 -1 
+T - 63 59 59 -1 
+N factor 64 -1 65 -1 
+T * 65 66 64 -1 
+T / 66 67 64 -1 
+T div 67 68 64 -1 
+T mod 68 69 64 -1 
+T e 69 -1 64 -1 
+T IDEN 70 71 0 -1 
+T NUMB 71 72 0 -1 
+T STRING 72 73 0 -1 
+T VAIDEN 73 74 0 -86 
+T ( 74 77 75 -1 
+N expr 75 -1 76 -1 
+T ) 76 -1 0 -1 
+T nao 77 -1 78 -1 
+N factor 78 -1 0 -1 
+T STRING 79 -1 0 -1 
+
+Fim!
+
+
+Linha 1 | Lexema: "programa"
+Lexema aceito. O sucessor é a linha: 2
+Fim!
+
+
+Linha 2 | Lexema: "IDEN"
+Lexema aceito. O sucessor é a linha: 3
+Fim!
+
+
+Linha 3 | Lexema: ";"
+Lexema aceito. O sucessor é a linha: 4
+Fim!
+
+
+Linha 4 | Lexema: "var"
+Não terminal encontrado: "block". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 5. Vai para a linha: 6
+Lexema aceito. O sucessor é a linha: 7
+Fim!
+
+
+Linha 7 | Lexema: "IDEN"
+
+
+ Veremos 
+
+ sal
+Lexema aceito. O sucessor é a linha: 8
+Fim!
+
+
+Linha 8 | Lexema: ":"
+Não reconhecido. Alternativo na linha: 10
+Lexema aceito. O sucessor é a linha: 11
+Fim!
+
+
+Linha 11 | Lexema: "inteiro"
+entrei aqui
+IMPRIMINDO - sal
+Não terminal encontrado: "type". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 12. Vai para a linha: 18
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 12.
+Lexema aceito. O sucessor é a linha: 13
+Fim!
+
+
+Linha 13 | Lexema: "IDEN"
+Lexema aceito. O sucessor é a linha: 8
+Fim!
+
+
+Linha 8 | Lexema: ":"
+Não reconhecido. Alternativo na linha: 10
+Lexema aceito. O sucessor é a linha: 11
+Fim!
+
+
+Linha 11 | Lexema: "inteiro"
+entrei aqui
+IMPRIMINDO - sal
+Não terminal encontrado: "type". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 12. Vai para a linha: 18
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 12.
+Lexema aceito. O sucessor é a linha: 13
+Fim!
+
+
+Linha 13 | Lexema: "inicio"
+Não reconhecido. Alternativo na linha: 6
+Não reconhecido. Alternativo na linha: 14
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "se"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Não reconhecido. Alternativo na linha: 35
+Não reconhecido. Alternativo na linha: 39
+Lexema aceito. O sucessor é a linha: 40
+Fim!
+
+
+Linha 40 | Lexema: "VAIDEN"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 41. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Não reconhecido. Alternativo na linha: 71
+Não reconhecido. Alternativo na linha: 72
+Não reconhecido. Alternativo na linha: 73
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ">"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Lexema aceito. O sucessor é a linha: 52
+Fim!
+
+
+Linha 52 | Lexema: "NUMB"
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 0. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Não reconhecido. Alternativo na linha: 71
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: "entao"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 0.
+Voltando para linha 41.
+Lexema aceito. O sucessor é a linha: 42
+Fim!
+
+
+Linha 42 | Lexema: "VAIDEN"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 43. Vai para a linha: 26
+Lexema aceito. O sucessor é a linha: 27
+oi
+Fim!
+
+
+Linha 27 | Lexema: ":="
+Lexema aceito. O sucessor é a linha: 28
+Fim!
+
+
+Linha 28 | Lexema: "NUMB"
+Não terminal encontrado: "expr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 0. Vai para a linha: 50
+Não terminal encontrado: "siexpr". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 51. Vai para a linha: 58
+Não reconhecido. Alternativo na linha: 63
+Não reconhecido. Alternativo na linha: 59
+Não terminal encontrado: "term". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 60. Vai para a linha: 64
+Não terminal encontrado: "factor". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 65. Vai para a linha: 70
+Não reconhecido. Alternativo na linha: 71
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 65.
+Voltando novamente, para linha 66.
+Voltando novamente, para linha 67.
+Voltando novamente, para linha 68.
+Voltando novamente, para linha 69.
+Voltando novamente, para linha -1.
+Voltando para linha 60.
+Voltando novamente, para linha 61.
+Voltando novamente, para linha 62.
+Voltando novamente, para linha -1.
+Voltando para linha 51.
+Voltando novamente, para linha 53.
+Voltando novamente, para linha 54.
+Voltando novamente, para linha 55.
+Voltando novamente, para linha 56.
+Voltando novamente, para linha 57.
+Voltando novamente, para linha -1.
+Voltando para linha 0.
+Voltando para linha 43.
+Voltando novamente, para linha 45.
+Voltando novamente, para linha -1.
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "fim"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Não reconhecido. Alternativo na linha: 35
+Não reconhecido. Alternativo na linha: 39
+Não reconhecido. Alternativo na linha: 46
+Não reconhecido. Alternativo na linha: 16
+Não reconhecido. Alternativo na linha: 17
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: ";"
+Voltando para linha 16.
+Lexema aceito. O sucessor é a linha: 15
+Fim!
+
+
+Linha 15 | Lexema: "fim"
+Não terminal encontrado: "statm". Devemos empilha-lo.
+Ao finalizar esse não terminal devemos voltar na linha: 16. Vai para a linha: 26
+Não reconhecido. Alternativo na linha: 29
+Não reconhecido. Alternativo na linha: 35
+Não reconhecido. Alternativo na linha: 39
+Não reconhecido. Alternativo na linha: 46
+Não reconhecido. Alternativo na linha: 16
+Não reconhecido. Alternativo na linha: 17
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+Fim!
+
+
+Linha -1 | Lexema: "."
+Voltando para linha 16.
+Voltando novamente, para linha 17.
+Voltando novamente, para linha -1.
+Voltando para linha 5.
+Lexema aceito. O sucessor é a linha: 0
+Linha sucessora é 0, ou seja, Chegamos ao fim dessa cadeia não terminal.
+
+
+!! Cadeia reconhecida !!
+
+

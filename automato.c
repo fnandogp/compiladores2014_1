@@ -32,7 +32,7 @@ void carregaAutomato(int **matrix, int linhas, int colunas, FILE* automato){
 	char* pch;
 	int nLinha=0;
 	int nColuna=0;
-	while(fgets(buffer,50,automato)!=NULL){
+	while(fgets(buffer,1000,automato)!=NULL){
 		pch = strtok(buffer, " \n");
 		while(pch!=NULL){
 			matrix[nLinha][nColuna] = atoi(pch);
@@ -113,7 +113,7 @@ int ehNumero(char c){
 }
 
 int ehSimbolo(char c){
-	if(!ehLetra(c) && !ehNumero(c) && c!=32 && c!='\n' && c!='/'){
+	if(!ehLetra(c) && !ehNumero(c) && c!=32 && c!='\n' && c!='/' && c!='"' && c!=',' && c!='	'){
 		return 1;
 	}
 	return 0;
@@ -132,6 +132,12 @@ int verificaSimboloLido(char c){
 	}
 	if(c=='/'){ //Simbolo lido eh '/'
 		return 4;
+	}
+	if(c=='"'){
+		return 5;
+	}
+	if(c==','){
+		return 6;
 	}
 
 	return 0;

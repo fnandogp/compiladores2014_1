@@ -3,7 +3,7 @@
 #define TAM 31
 
 struct celula{
-	char simbolo[8];
+	char simbolo[50];
 	char* tipo;
 	struct celula* prox;
 };
