@@ -13,6 +13,14 @@ Lista* lista_construir (void) {
 	return NULL;
 }
 
+void lista_alterarInfo(Lista* l, char* novaInfo){
+	char info[30];
+	strcpy(info, l->info);
+	strcat(info, novaInfo);
+	l->info = (char *)realloc(l->info, sizeof(info));
+	strcpy(l->info, info);
+}
+
 void lista_imprimir (Lista* l) {
 	if(!l) {
 		printf("|");
@@ -53,10 +61,8 @@ Lista* lista_consultar (Lista* l, char palavra[]) {
 
 void imprimeVariaveis(Lista* l, char* tipo, FILE* arquivo){
 	
-	printf("entrei aqui\n");
 	Lista* aux = l;
 	while(aux!=NULL){
-		printf("IMPRIMINDO - %s\n",aux->info);
 		fprintf(arquivo, "	%s %s;\n", tipo, aux->info);
 		aux = aux->prox;
 	}

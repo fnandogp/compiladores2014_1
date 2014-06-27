@@ -18,16 +18,16 @@
 18	1	32	19	0	-1	# inteiro
 19	1	33	79	20	-1	# cadeia
 20	1	24	-1	21	-1	# [
-21	1	2	-1	22	-1	# NUMB
+21	1	2	-1	22	32	# NUMB
 22	1	13	23	21	-1	# ,
 23	1	25	-1	24	-1	# ]
 24	1	41	-1	25	-1	# de
-25	0	3	-1	0	-1	# type
-26	1	5	29	27	15	# IDEN - alterado de VAIDEN(5) para IDEN(4)
+25	0	3	-1	0	69	# type
+26	1	5	29	27	15	# VAIDEN
 27	1	28	-1	28	16	# :=
 28	0	5	-1	0	-1	# expr
-29	1	42	35	30	27	# IDEN - alterado de PRIDEN(42) para IDEN(4)
-30	1	22	34	31	-1	# (
+29	1	42	35	30	27	# PRIDEN
+30	1	22	16	31	-1	# (
 31	0	5	-1	32	28	# expr
 32	1	13	33	31	-1	# ,
 33	1	23	-1	0	29	# )
@@ -67,13 +67,13 @@
 67	1	45	68	64	-1	# div
 68	1	46	69	64	-1	# mod
 69	1	47	-1	64	-1	# e
-70	1	48	71	0	-1	# IDEN - alterado de COIDEN(48) para IDEN(4)
+70	1	48	71	0	-1	# COIDEN
 71	1	2	72	0	4	# NUMB
-72	1	49	73	0	31	# STRING
-73	1	5	74	0	3	# IDEN - alterado de VAIDEN(5) para IDEN(4)
+72	1	51	73	0	31	# caracter
+73	1	5	74	0	3	# VAIDEN
 74	1	22	77	75	5	# (
 75	0	5	-1	76	-1	# expr
 76	1	23	-1	0	6	# )
 77	1	50	-1	78	7	# nao
 78	0	8	-1	0	-1	# factor
-79	1	49	-1	0	-1	# string
+79	1	51	-1	0	-1	# caracter

@@ -13,6 +13,7 @@
 #include <string.h>
 
 Lista* variaveis = NULL;
+Lista* variaveisImprimir = NULL;
 
 void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArquivo, int* flag){
 
@@ -80,7 +81,7 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			break;
 		case 11: // <> dentro do SE
 			arquivo = fopen(nomeArquivo, "a");
-			fprintf(arquivo, "<>");
+			fprintf(arquivo, "!=");
 			fclose(arquivo);
 			break;
 		case 12: // >= dentro do SE
@@ -168,16 +169,22 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 		case 27: //Procedimento PRIDEN
 			arquivo = fopen(nomeArquivo, "a");
 			if(strcmp("leiacad",info[2])==0){
-				fprintf(arquivo,"scanf(\"%%s\\n\",");
+				fprintf(arquivo,"scanf(\"%%s\",");
 			}
-			else if(strcmp("leianum", info[2])==0){
-				fprintf(arquivo,"scanf(\"%%f\\n\",");
+			else if(strcmp("leiareal", info[2])==0){
+				fprintf(arquivo,"scanf(\"%%f\",&");
+			}
+			else if(strcmp("leiaint", info[2])==0){
+				fprintf(arquivo,"scanf(\"%%d\",&");
 			}
 			else if(strcmp("imprimacad", info[2])==0){
-				fprintf(arquivo, "printf(\"%%s\\n\",");
+				fprintf(arquivo, "printf(\"%%s\",");
 			}
 			else if(strcmp("imprimanum", info[2])==0){
-				fprintf(arquivo, "printf(\"%%f\\n\",");
+				fprintf(arquivo, "printf(\"%%f\",");
+			}
+			else if(strcmp("saltelinha", info[2])==0){
+				fprintf(arquivo, "printf(\"\\n\")");
 			}
 			fclose(arquivo);
 			break;
@@ -185,7 +192,6 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			arquivo = fopen(nomeArquivo, "a");
 			//fprintf(arquivo,"%s", info[2]);
 			fclose(arquivo);
-			printf("------------------------ %s\n",info[2]);
 			break;
 		case 29:
 			arquivo = fopen(nomeArquivo, "a");
@@ -206,14 +212,29 @@ void aplicaAcoesSemanticas(FILE* arquivo, int acao, char** info, char* nomeArqui
 			}
 			fprintf(arquivo,"\"");
 			fclose(arquivo);
-			break;			
+			break;
+		case 32:
+			arquivo = fopen(nomeArquivo, "a");
+			char array[30];
+			strcpy(array,"[");
+			strcat(array, info[2]);
+			strcat(array,"]\0"); 
+			lista_alterarInfo(variaveisImprimir, array);
+			break;		
 		case 60: //Cria variavel
-			printf("\n\n Veremos \n\n %s\n", info[2]);
 			variaveis = lista_inserir(variaveis,info[2]);
+			variaveisImprimir = lista_inserir(variaveisImprimir, info[2]);
 			break;
 		case 69: //Escreve as variaveis no arquivo
-			arquivo = fopen(nomeArquivo,"a");	
-			imprimeVariaveis(variaveis, "int", arquivo);
+			arquivo = fopen(nomeArquivo,"a");
+			if(strcmp(info[2],"cadeia")!=0){
+				if(strcmp(info[2],"inteiro")==0){
+					imprimeVariaveis(variaveisImprimir, "int", arquivo);
+				}else if(strcmp(info[2],"caracter")==0){
+				imprimeVariaveis(variaveisImprimir, "char", arquivo);
+				}	
+				variaveisImprimir = NULL;
+			}
 			fclose(arquivo);
 			break;
 			

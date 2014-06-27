@@ -68,7 +68,6 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		buffer[posicao] = simbolo;
 		buffer[posicao+1] = '\0';
 		if(consultaSR(tab, buffer)){
-			printf("oi\n");
 			strcpy(tipoSimbolo,"SIMBOLO RESERVADO");
 		}else{
 			buffer[posicao] = '\0';
@@ -94,7 +93,7 @@ void acoesSemanticas(int tipoAcao, char* buffer, int posicao, char* tipoSimbolo,
 		break;
 	case 10:
 		buffer[posicao] = '\0';
-		strcpy(tipoSimbolo,"STRING");
+		strcpy(tipoSimbolo,"caracter");
 		break;
 	case 11:
 		buffer[posicao] = '\0';
@@ -167,10 +166,10 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 				strcpy(vetor[1], "NUMB");
 				strcpy(vetor[2], buffer);
 			}
-			else if(strcmp(tipoSimbolo, "STRING")==0){
+			else if(strcmp(tipoSimbolo, "caracter")==0){
 				verificaSimboloTamanho2 = 1;
 				strcpy(vetor[0], "C5");
-				strcpy(vetor[1], "STRING");
+				strcpy(vetor[1], "caracter");
 				strcpy(vetor[2], buffer);
 			}
 			else if(strcmp(tipoSimbolo, "NUMERO REAL")==0) {
@@ -209,8 +208,6 @@ int executaAnalisador(FILE* arquivoEntrada, int** automato, int linhas, int colu
 
 		}
 	}
-
-	printf("cheguei aqui\n");
 	return 0;
 
 

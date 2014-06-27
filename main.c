@@ -28,7 +28,7 @@ int main (int argc, char *argv[]){
 	}
 	
 	char** TABGRAFO = inicializaTABGRAFO(TABGRAFO,79,6);
-	char*** TABT = inicializaTABT(TABT, 50,2);
+	char*** TABT = inicializaTABT(TABT, 51,2);
 	char*** TABNT = inicializaTABNT(TABNT, 8, 3);
 	char*** ANASIN = inicializaANASIN(ANASIN, 79, 6);
 
@@ -52,9 +52,9 @@ int main (int argc, char *argv[]){
 
 
 	carregaTABGRAFO(TABGRAFO,79,6,tabelaGrafo);
-	carregaTABT(TABT,50,2,tabelaTerminais);
+	carregaTABT(TABT,51,2,tabelaTerminais);
 	carregaTABNT(TABNT,8,3,tabelaNaoTerminais);
-	carregaAnaSin(ANASIN,TABGRAFO,79,6,TABT,50,2,TABNT,8,3);
+	carregaAnaSin(ANASIN,TABGRAFO,79,6,TABT,51,2,TABNT,8,3);
 
 	printf("\n");
 

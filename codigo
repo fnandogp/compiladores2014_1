@@ -1,12 +1,27 @@
 programa teste3;
+var nome: cadeia[40] de caracter;
 var sal: inteiro;
-var teste: inteiro;
 inicio
-   sal := 10;	
-	se sal < 20 entao
-		inicio
-			leianum( ) ;
+   sal := 1;
+   enquanto sal > 0 faca
+	inicio
+	imprimacad("DIGITE O NOME: ") ;
+   	leiacad(nome) ;
+	imprimacad("DIGITE O SALARIO: ") ;
+   	leiaint(sal) ;
+		imprimacad(nome) ;
+		imprimacad("  ") ;
+		imprimanum(sal) ;
+		imprimacad("  ") ;
+		se sal < 1000 entao
+			inicio
+			imprimacad("ISENTO") ;
+			saltelinha ;
+			fim
+		senao
+			inicio
+			imprimacad("COBRAR IMPOSTO") ;
+			fim;
 		fim;
-		casa := 1;
 fim.
 
